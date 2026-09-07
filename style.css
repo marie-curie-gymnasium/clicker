@@ -1,0 +1,63 @@
+/* Font: Inter */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-VariableFont_opsz\,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+body {
+    display: flex;                  
+    flex-direction: column;         /* Richtung: von oben nach unten */
+    background-color: #d2d2d2;    /* Hintergrundfarbe (Füllung) */   
+
+    /* damit es mittig ist 😭 (FUNKTIONIERT NUR MIT DISPLAY: FLEX) */
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Inter', sans-serif;   /* im gesamten body wird Inter benutzt. (wenn es nicht laden kann, wird sans-serif benutzt) */
+}
+
+#count-text {
+    font-weight: 800;   /* wie fett die Schrift ist */
+    font-size: 40px;    /* wie groß die Schrift ist */
+}
+
+button {
+    cursor: pointer;    /* beim Hovern zeigt die Maus eine Hand (damit man sieht, dass es klickbar ist) */
+}
+
+
+/* --- COOKIE ---*/
+#cookie {
+    width: 250px; height: 250px;
+    border-radius: 50%;             /* komplett rund (Kreis) */
+    border: none;                   /* hässlichen Rand entfernen */
+    transition: all 0.2s;           /* alle Änderungen werden innerhalb von 0,2 Sekunden durchgeführt */
+}
+
+/* beim Rübergehen mit der Maus */
+#cookie:hover {
+    transform: scale(1.05);     /* Größe auf 105 % vergrößern */
+}
+
+/* beim Klicken */
+#cookie:active {
+    transform: scale(0.96);     /* Größe auf 96 % verkleinern */
+}
+
+/* --- +1 Animation ---*/
+.popup {
+  position: fixed;
+  pointer-events: none;             /* keine Interaktion mit der Maus (ist sauberer) */
+  font-weight: bold;                /* fett */
+  animation: float 0.8s forwards;   /* Animation (siehe unten) abspielen */
+}
+
+/* Animation */
+@keyframes float {
+    to {
+        transform: translateY(-50px);   /* nach oben bewegen */
+        opacity: 0;                     /* unsichtbar werden */
+    }
+}
