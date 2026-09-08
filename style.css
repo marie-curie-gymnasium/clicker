@@ -6,6 +6,15 @@
   font-style: normal;
 }
 
+/* Deaktiviert Tap-Highlighting (Android/WebKit) */
+* {         /* der Stern (*) ist der Universal-Selektor, also bezieht sich auf ALLE Objekte im Dokument (nicht zu viel verwenden wegen Performance!) */
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    touch-action: manipulation;     /* Deaktiviert Zoom bei doppeltem Tippen (iOS/Mobile) */
+}
+
 body {
     display: flex;                  
     flex-direction: column;         /* Richtung: von oben nach unten */
@@ -16,7 +25,11 @@ body {
     align-items: center;
 
     font-family: 'Inter', sans-serif;   /* im gesamten body wird Inter benutzt. (wenn es nicht laden kann, wird sans-serif benutzt) */
+
+    touch-action: manipulation;         /* deaktiviert Zoom bei doppeltem Tippen (iOS/Mobile) */
 }
+
+
 
 #count-text {
     font-weight: 800;   /* wie fett die Schrift ist */
@@ -46,7 +59,7 @@ button {
     transform: scale(0.96);     /* Größe auf 96 % verkleinern */
 }
 
-/* --- +1 Animation ---*/
+/* --- Klasse für die +1 Animation ---*/
 .popup {
   position: fixed;
   pointer-events: none;             /* keine Interaktion mit der Maus (ist sauberer) */
